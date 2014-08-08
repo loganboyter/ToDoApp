@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <title>To Do</title>
+</head>
+<body>
+    <div class="container">
+
+        
+
+        <div class="row clearfix">
+            <div class="col-md-4 column">
+                <div class="row clearfix well-lg">
+                    <div class="col-md-2 column">
+                        <!--<button class="btn btn-danger" id="hide" onclick="myApp.hideList();">Hide</button>-->
+                    </div>
+                    <div class="col-md-5 column">
+                        <input type="text" class="form-control" id="todo" placeholder="Enter a task!" />
+                    </div>
+                    <div class="col-md-5 column">
+                        <button type="button" class="btn btn-primary" id="addTask" onclick="myApp.addTask(myApp.inputReader('todo'));">Add task</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 column well-lg" id="output">
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal starts here-->
+    <div class="modal fade confirm" tabindex="-1" role="dialog" aria-labelledby="confirm" aria-hidden="true" id="complete">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header text-center">What would you like to do?</div>
+                <div class="modal-body">
+                    <div class="well-sm">
+
+                        <button class="btn btn-primary center-block" id ="complete-btn" onclick="myApp.setComplete(myApp.inputReader('hidden-input'));">Set Complete</button>
+                        <button class="btn btn-primary center-block" id="incomplete-btn" onclick="myApp.setIncomplete(myApp.inputReader('hidden-input'));">Set Incomplete</button>
+
+                    </div>
+                    <div class="well-sm"><button class="btn btn-danger center-block" onclick="myApp.removeTask(myApp.inputReader('hidden-input'));">Remove Task</button></div>
+                    <input type="hidden" id="hidden-input" />
+                    <div class="well-sm"><button class="btn btn-warning center-block" onclick="$('#complete').modal('hide');">Cancel</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-ui-1.10.4.js"></script>
+    <script src="Scripts/moment.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
